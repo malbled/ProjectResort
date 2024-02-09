@@ -15,6 +15,8 @@ namespace ProjectResort.WinForm.Forms
         public FormMain()
         {
             InitializeComponent();
+            label1.Text = "ФИО: " + WorkToUser.Staff.FIO.ToString();
+            label2.Text = "Должность: " + WorkToUser.Staff.Post.ToString();
         }
     }
 }

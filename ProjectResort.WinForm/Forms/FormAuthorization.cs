@@ -52,6 +52,8 @@ namespace ProjectResort.WinForm.Forms
                     db.EntryLogs.Add(EntryLog);
                     db.SaveChanges();
 
+                    WorkToUser.Staff = user;
+
                     var form = new FormMain();
                     form.Show();
                     this.Hide();

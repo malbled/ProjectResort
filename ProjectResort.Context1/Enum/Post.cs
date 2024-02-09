@@ -1,21 +1,16 @@
-﻿namespace ProjectResort.Context1.Enum
+﻿using System.ComponentModel;
+
+namespace ProjectResort.Context1.Enum
 {
     public enum Post
     {
-        /// <summary>
-        /// Продавец
-        /// </summary>
-        /// 
+        [Description("Продавец")]
         Seller,
 
-        /// <summary>
-        /// Старший смены
-        /// </summary>
+        [Description("Старший смены")]
         ShiftSupervisor,
 
-        /// <summary>
-        /// Администратор
-        /// </summary>
+        [Description("Администратор")]
         Administrator
 
     }
