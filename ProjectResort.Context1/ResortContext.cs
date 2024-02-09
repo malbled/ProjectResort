@@ -15,5 +15,6 @@ namespace ProjectResort.Context1
         public DbSet<Order> Orders { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Staff> Staffs { get; set; }
+        public DbSet<EntryLog> EntryLogs { get; set; }
     }
 }

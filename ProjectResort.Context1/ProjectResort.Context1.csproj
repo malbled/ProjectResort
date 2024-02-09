@@ -58,8 +58,25 @@
     <Compile Include="Migrations\202402091822282_Create.designer.cs">
       <DependentUpon>202402091822282_Create.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402092010515_Edit.cs" />
+    <Compile Include="Migrations\202402092010515_Edit.designer.cs">
+      <DependentUpon>202402092010515_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402092013366_Edit1.cs" />
+    <Compile Include="Migrations\202402092013366_Edit1.designer.cs">
+      <DependentUpon>202402092013366_Edit1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402092014267_Edit3.cs" />
+    <Compile Include="Migrations\202402092014267_Edit3.designer.cs">
+      <DependentUpon>202402092014267_Edit3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402092016316_Edit4.cs" />
+    <Compile Include="Migrations\202402092016316_Edit4.designer.cs">
+      <DependentUpon>202402092016316_Edit4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\EntryLog.cs" />
     <Compile Include="Models\Equipment.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Service.cs" />
@@ -74,6 +91,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202402091822282_Create.resx">
       <DependentUpon>202402091822282_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402092010515_Edit.resx">
+      <DependentUpon>202402092010515_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402092013366_Edit1.resx">
+      <DependentUpon>202402092013366_Edit1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402092014267_Edit3.resx">
+      <DependentUpon>202402092014267_Edit3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402092016316_Edit4.resx">
+      <DependentUpon>202402092016316_Edit4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

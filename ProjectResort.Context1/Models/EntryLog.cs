@@ -4,22 +4,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProjectResort.Context1.Models
 {
-    public class Staff
+    public class EntryLog
     {
         public int Id { get; set; }
 
         [Required]
-        public Post Post { get; set; }
+        public DateTimeOffset DateLog { get; set; }
 
         [Required]
-        public string FIO { get; set; }
+        public string StaffKod { get; set; }
+        public virtual Staff Staff { get; set; }
 
         [Required]
-        public string Login { get; set; }
-
-        [Required]
-        public string Password { get; set; }
-
-        
+        public TypeEntry TypeEntry { get; set; }
     }
 }
