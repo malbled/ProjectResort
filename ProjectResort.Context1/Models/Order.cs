@@ -27,12 +27,10 @@ namespace ProjectResort.Context1.Models
         public decimal TimeRental { get; set; }
 
         public virtual ICollection<Service> Services { get; set; }
-        public virtual ICollection<Equipment> Equipments { get; set; }
 
         public Order()
         {
             Services = new List<Service>();
-            Equipments = new List<Equipment>();
         }
     }
 }

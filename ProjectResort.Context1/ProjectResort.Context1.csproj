@@ -74,10 +74,13 @@
     <Compile Include="Migrations\202402092016316_Edit4.designer.cs">
       <DependentUpon>202402092016316_Edit4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402092045541_Edit6.cs" />
+    <Compile Include="Migrations\202402092045541_Edit6.designer.cs">
+      <DependentUpon>202402092045541_Edit6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\EntryLog.cs" />
-    <Compile Include="Models\Equipment.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\Staff.cs" />
@@ -103,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402092016316_Edit4.resx">
       <DependentUpon>202402092016316_Edit4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402092045541_Edit6.resx">
+      <DependentUpon>202402092045541_Edit6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
