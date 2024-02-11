@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace ProjectResort.WinForm.Forms
 {
@@ -17,6 +9,11 @@ namespace ProjectResort.WinForm.Forms
             InitializeComponent();
             label1.Text = "ФИО: " + WorkToUser.Staff.FIO.ToString();
             label2.Text = "Должность: " + WorkToUser.Staff.Post.ToString();
+        }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

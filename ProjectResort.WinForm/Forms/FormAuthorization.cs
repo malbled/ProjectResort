@@ -72,5 +72,11 @@ namespace ProjectResort.WinForm.Forms
                 txtPass.UseSystemPasswordChar = true;
             }
         }
+
+        private void btnSign_Click(object sender, EventArgs e)
+        {
+            var form = new FormAddStaff();
+            form.ShowDialog(this);    
+        }
     }
 }

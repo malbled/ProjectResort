@@ -38,6 +38,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnSign = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -94,13 +95,16 @@
             // 
             // btnEntry
             // 
-            this.btnEntry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.btnEntry.BackColor = System.Drawing.Color.White;
             this.btnEntry.Enabled = false;
+            this.btnEntry.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnEntry.FlatAppearance.BorderSize = 3;
+            this.btnEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntry.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.btnEntry.ForeColor = System.Drawing.Color.Black;
-            this.btnEntry.Location = new System.Drawing.Point(359, 256);
+            this.btnEntry.Location = new System.Drawing.Point(339, 304);
             this.btnEntry.Name = "btnEntry";
-            this.btnEntry.Size = new System.Drawing.Size(139, 32);
+            this.btnEntry.Size = new System.Drawing.Size(139, 39);
             this.btnEntry.TabIndex = 5;
             this.btnEntry.Text = "Войти";
             this.btnEntry.UseVisualStyleBackColor = false;
@@ -108,10 +112,13 @@
             // 
             // btnClose
             // 
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnClose.FlatAppearance.BorderSize = 3;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.btnClose.Location = new System.Drawing.Point(214, 256);
+            this.btnClose.Location = new System.Drawing.Point(194, 304);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(139, 32);
+            this.btnClose.Size = new System.Drawing.Size(139, 39);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Отмена";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -119,7 +126,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.panel1.BackColor = System.Drawing.Color.Lime;
             this.panel1.Location = new System.Drawing.Point(-7, 102);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(534, 11);
@@ -137,12 +144,28 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // btnSign
+            // 
+            this.btnSign.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnSign.FlatAppearance.BorderSize = 3;
+            this.btnSign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSign.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSign.Location = new System.Drawing.Point(52, 236);
+            this.btnSign.Name = "btnSign";
+            this.btnSign.Size = new System.Drawing.Size(426, 39);
+            this.btnSign.TabIndex = 9;
+            this.btnSign.Text = "Регистрация";
+            this.btnSign.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSign.UseVisualStyleBackColor = true;
+            this.btnSign.Click += new System.EventHandler(this.btnSign_Click);
+            // 
             // FormAuthorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(510, 300);
+            this.ClientSize = new System.Drawing.Size(510, 348);
+            this.Controls.Add(this.btnSign);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnClose);
@@ -172,5 +195,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnSign;
     }
 }
