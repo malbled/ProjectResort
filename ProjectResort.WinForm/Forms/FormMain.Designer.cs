@@ -37,6 +37,7 @@
             this.заказыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.услугиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.историяВходаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.клиентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -87,7 +88,8 @@
             this.заказыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.заказыToolStripMenuItem1,
             this.услугиToolStripMenuItem,
-            this.историяВходаToolStripMenuItem});
+            this.историяВходаToolStripMenuItem,
+            this.клиентыToolStripMenuItem});
             this.заказыToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.заказыToolStripMenuItem.Name = "заказыToolStripMenuItem";
             this.заказыToolStripMenuItem.Size = new System.Drawing.Size(93, 34);
@@ -110,6 +112,13 @@
             this.историяВходаToolStripMenuItem.Name = "историяВходаToolStripMenuItem";
             this.историяВходаToolStripMenuItem.Size = new System.Drawing.Size(238, 34);
             this.историяВходаToolStripMenuItem.Text = "История входа";
+            // 
+            // клиентыToolStripMenuItem
+            // 
+            this.клиентыToolStripMenuItem.Name = "клиентыToolStripMenuItem";
+            this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(238, 34);
+            this.клиентыToolStripMenuItem.Text = "Клиенты";
+            this.клиентыToolStripMenuItem.Click += new System.EventHandler(this.клиентыToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -157,5 +166,6 @@
         private System.Windows.Forms.ToolStripMenuItem заказыToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem услугиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem историяВходаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem;
     }
 }

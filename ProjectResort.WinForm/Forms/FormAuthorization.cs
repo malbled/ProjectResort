@@ -26,6 +26,23 @@ namespace ProjectResort.WinForm.Forms
             btnEntry.Enabled = !string.IsNullOrWhiteSpace(txtLogin.Text)
                 && !string.IsNullOrWhiteSpace(txtPass.Text);
         }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                txtPass.UseSystemPasswordChar = false;
+            }
+            else if (checkBox1.Checked == false)
+            {
+                txtPass.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void btnSign_Click(object sender, EventArgs e)
+        {
+            var form = new FormAddStaff();
+            form.ShowDialog(this);
+        }
 
         private void btnEntry_Click(object sender, EventArgs e)
         {
@@ -61,22 +78,6 @@ namespace ProjectResort.WinForm.Forms
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked == true)
-            {
-                txtPass.UseSystemPasswordChar = false;
-            }
-            else if (checkBox1.Checked == false)
-            {
-                txtPass.UseSystemPasswordChar = true;
-            }
-        }
-
-        private void btnSign_Click(object sender, EventArgs e)
-        {
-            var form = new FormAddStaff();
-            form.ShowDialog(this);    
-        }
+        
     }
 }

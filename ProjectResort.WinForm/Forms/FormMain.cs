@@ -15,5 +15,11 @@ namespace ProjectResort.WinForm.Forms
         {
             Application.Exit();
         }
+
+        private void клиентыToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var form = new FormShowClients();
+            form.Show();
+        }
     }
 }
