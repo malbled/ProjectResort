@@ -49,7 +49,7 @@ namespace ProjectResort.WinForm.Forms
             {
                 using (var db = new ResortContext())
                 {
-                    db.Clients.Add(form.Tour);
+                    //db.Clients.Add(form.Tour);
                     db.SaveChanges();
                 }
             }

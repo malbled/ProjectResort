@@ -62,12 +62,6 @@
     <Compile Include="Forms\FormAddClient.Designer.cs">
       <DependentUpon>FormAddClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormAddStaff.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormAddStaff.Designer.cs">
-      <DependentUpon>FormAddStaff.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormAuthorization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,14 +80,17 @@
     <Compile Include="Forms\FormShowClients.Designer.cs">
       <DependentUpon>FormShowClients.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormShowInfoStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormShowInfoStaff.Designer.cs">
+      <DependentUpon>FormShowInfoStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkToUser.cs" />
     <EmbeddedResource Include="Forms\FormAddClient.resx">
       <DependentUpon>FormAddClient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormAddStaff.resx">
-      <DependentUpon>FormAddStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAuthorization.resx">
       <DependentUpon>FormAuthorization.cs</DependentUpon>
@@ -103,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormShowClients.resx">
       <DependentUpon>FormShowClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormShowInfoStaff.resx">
+      <DependentUpon>FormShowInfoStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dog2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

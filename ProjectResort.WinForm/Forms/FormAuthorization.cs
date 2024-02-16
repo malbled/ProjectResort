@@ -38,12 +38,6 @@ namespace ProjectResort.WinForm.Forms
             }
         }
 
-        private void btnSign_Click(object sender, EventArgs e)
-        {
-            var form = new FormAddStaff();
-            form.ShowDialog(this);
-        }
-
         private void btnEntry_Click(object sender, EventArgs e)
         {
             using (var db = new ResortContext())
@@ -57,27 +51,24 @@ namespace ProjectResort.WinForm.Forms
 
                     EntryLog.DateLog = DateTime.Now;
                     EntryLog.StaffKod = txtLogin.Text.ToString();
-                    EntryLog.TypeEntry = Context1.Enum.TypeEntry.UnSuccess;
-                    db.EntryLogs.Add(EntryLog);
-                    db.SaveChanges();
+                    EntryLog.TypeEntry = Context1.Enum.TypeEntry.UnSuccess;  
                 }
                 else
                 {
                     EntryLog.DateLog = DateTime.Now;
                     EntryLog.StaffKod = user.Login;
                     EntryLog.TypeEntry = Context1.Enum.TypeEntry.Success;
-                    db.EntryLogs.Add(EntryLog);
-                    db.SaveChanges();
-
                     WorkToUser.Staff = user;
 
                     var form = new FormMain();
                     form.Show();
+                    var form1 = new FormShowInfoStaff();
+                    form1.Show();
                     this.Hide();
                 }
+                db.EntryLogs.Add(EntryLog);
+                db.SaveChanges();
             }
-        }
-
-        
+        }     
     }
 }

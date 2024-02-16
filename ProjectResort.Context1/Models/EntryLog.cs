@@ -13,7 +13,6 @@ namespace ProjectResort.Context1.Models
 
         [Required]
         public string StaffKod { get; set; }
-        public virtual Staff Staff { get; set; }
 
         [Required]
         public TypeEntry TypeEntry { get; set; }

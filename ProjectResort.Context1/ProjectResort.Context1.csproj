@@ -78,6 +78,10 @@
     <Compile Include="Migrations\202402092045541_Edit6.designer.cs">
       <DependentUpon>202402092045541_Edit6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402161443010_Edit10.cs" />
+    <Compile Include="Migrations\202402161443010_Edit10.Designer.cs">
+      <DependentUpon>202402161443010_Edit10.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\EntryLog.cs" />
@@ -109,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402092045541_Edit6.resx">
       <DependentUpon>202402092045541_Edit6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402161443010_Edit10.resx">
+      <DependentUpon>202402161443010_Edit10.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

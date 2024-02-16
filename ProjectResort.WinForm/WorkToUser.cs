@@ -1,11 +1,5 @@
 ﻿using ProjectResort.Context1.Enum;
 using ProjectResort.Context1.Models;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectResort.WinForm
 {
@@ -33,6 +27,5 @@ namespace ProjectResort.WinForm
 
         internal static bool CompareRole(Post post)
          => post == Staff.Post;
-
     }
 }
