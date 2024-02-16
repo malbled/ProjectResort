@@ -1,11 +1,9 @@
 ﻿using ProjectResort.Context1;
 using ProjectResort.Context1.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.Data.Entity;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace ProjectResort.WinForm.Forms
 {
@@ -20,6 +18,8 @@ namespace ProjectResort.WinForm.Forms
             {
                 dataGridView1.DataSource = db.Orders.ToList();
             }
+            btnCloseOrder.Enabled  = !WorkToUser.CompareRole(Context1.Enum.Post.Seller);
+            menuItemHistory.Enabled = WorkToUser.CompareRole(Context1.Enum.Post.Administrator);
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -48,13 +48,6 @@ namespace ProjectResort.WinForm.Forms
             }
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Column7")
             {
-                //decimal sum;
-                //using (var db = new ResortContext())
-                //{
-                //    var order = db.Orders.Include(x => x.Services).FirstOrDefault(x => x.Id == (int)e.Value); 
-                //    sum = order.Services.Sum(x => x.Price);
-                //}
-                //e.Value = sum.ToString();
                 if((decimal)e.Value == default(decimal)) {
                     e.Value = "Заказ не закрыт";
                 }
@@ -62,18 +55,33 @@ namespace ProjectResort.WinForm.Forms
         }
 
         private void btnCloseOrder_Click(object sender, EventArgs e)
-        //{
-            
-                
-        //        var item =(Order) dataGridView1.SelectedRows[0].DataBoundItem;
-        //    if(item != null )
-        //    {
-        //        using (var db = new ResortContext()) { 
+        {
+            var item = (Order)dataGridView1.SelectedRows[0].DataBoundItem;
 
-        //        }
-        //    }
-            
-        //    item.TotalPrice = 
+            if (item != null)
+            {
+                using (var db = new ResortContext())
+                {
+                    var order = db.Orders.Include(x => x.Services).FirstOrDefault(x => x.Id == item.Id);
+                    order.TotalPrice = order.Services.Sum(x => x.Price * (item.TimeRental / 60m));
+                    order.Status = Context1.Enum.Status.Closed;
+                    db.SaveChanges();
+                    dataGridView1.DataSource = db.Orders.ToList();
+                }
+            }
+        }
+
+        private void menuItemReset_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+            Environment.Exit(0);
+        }
+
+        private void menuItemHistory_Click(object sender, EventArgs e)
+        {
+            var form = new FormHistory();
+            form.Show();
+            this.Close();
         }
     }
 }

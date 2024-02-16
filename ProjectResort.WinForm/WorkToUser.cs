@@ -16,8 +16,8 @@ namespace ProjectResort.WinForm
                     staff = new Staff()
                     {
                         Id = -1,
-                        FIO = "Неавторизованный гость",
-                        Post = Post.Administrator
+                        FIO = "Неопознаный человек",
+                        Post = Post.Seller
                     };
                 }
                 return staff;
