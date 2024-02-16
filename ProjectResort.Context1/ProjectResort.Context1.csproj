@@ -82,6 +82,14 @@
     <Compile Include="Migrations\202402161443010_Edit10.Designer.cs">
       <DependentUpon>202402161443010_Edit10.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402161739241_Edit11.cs" />
+    <Compile Include="Migrations\202402161739241_Edit11.Designer.cs">
+      <DependentUpon>202402161739241_Edit11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402161900449_Edit13.cs" />
+    <Compile Include="Migrations\202402161900449_Edit13.Designer.cs">
+      <DependentUpon>202402161900449_Edit13.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\EntryLog.cs" />
@@ -116,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402161443010_Edit10.resx">
       <DependentUpon>202402161443010_Edit10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402161739241_Edit11.resx">
+      <DependentUpon>202402161739241_Edit11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402161900449_Edit13.resx">
+      <DependentUpon>202402161900449_Edit13.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

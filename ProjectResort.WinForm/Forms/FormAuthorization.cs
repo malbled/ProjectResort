@@ -60,7 +60,7 @@ namespace ProjectResort.WinForm.Forms
                     EntryLog.TypeEntry = Context1.Enum.TypeEntry.Success;
                     WorkToUser.Staff = user;
 
-                    var form = new FormMain();
+                    var form = new FormOrders();
                     form.Show();
                     var form1 = new FormShowInfoStaff();
                     form1.Show();

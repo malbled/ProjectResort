@@ -43,10 +43,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Monospac821 BT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 25);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(64, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(411, 64);
+            this.label1.Size = new System.Drawing.Size(403, 74);
             this.label1.TabIndex = 1;
             this.label1.Text = "Добро пожаловать\r\nв информационную систему";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -62,20 +62,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Monospac821 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(241, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 19);
+            this.label2.Size = new System.Drawing.Size(49, 21);
             this.label2.TabIndex = 10;
             this.label2.Text = "Текст";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Monospac821 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(241, 197);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 19);
+            this.label3.Size = new System.Drawing.Size(49, 21);
             this.label3.TabIndex = 11;
             this.label3.Text = "Текст";
             // 
@@ -84,8 +84,8 @@
             this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(90)))), ((int)(((byte)(238)))));
             this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnNext.FlatAppearance.BorderSize = 3;
-            this.btnNext.Font = new System.Drawing.Font("Monospac821 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.Black;
             this.btnNext.Location = new System.Drawing.Point(319, 342);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(195, 33);
@@ -110,7 +110,7 @@
             this.btnPhoto.BackColor = System.Drawing.Color.White;
             this.btnPhoto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnPhoto.FlatAppearance.BorderSize = 3;
-            this.btnPhoto.Font = new System.Drawing.Font("Monospac821 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhoto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhoto.ForeColor = System.Drawing.Color.Black;
             this.btnPhoto.Location = new System.Drawing.Point(14, 342);
             this.btnPhoto.Name = "btnPhoto";
@@ -130,7 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(161)))), ((int)(((byte)(177)))));
-            this.ClientSize = new System.Drawing.Size(526, 387);
+            this.ClientSize = new System.Drawing.Size(526, 382);
             this.Controls.Add(this.btnPhoto);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.label3);
