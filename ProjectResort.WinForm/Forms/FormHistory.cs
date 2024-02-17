@@ -78,7 +78,6 @@ namespace ProjectResort.WinForm.Forms
             }
             using (var db = new ResortContext())
             {
-
                 if (comboBox1.SelectedItem.ToString() == "Все пользователи" && radioButton1.Checked)
                     dataGridView1.DataSource = db.EntryLogs.OrderBy(x => x.DateLog).ToList();
                 if (comboBox1.SelectedItem.ToString() == "Все пользователи" && radioButton2.Checked)

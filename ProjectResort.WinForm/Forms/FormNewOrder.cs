@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 
 namespace ProjectResort.WinForm.Forms
@@ -28,15 +27,7 @@ namespace ProjectResort.WinForm.Forms
             {
                 Services.Add(service, 1);
             }
-            if(count == 0)
-            {
-                textBox1.Text += "\r\n" + service.Name + " x" + 1;
-            }
-            else
-            {
-                textBox1.Text += "\r\n" + service.Name + " x" + count;
-            }
-            
+            PrintOrder();
         }
 
         private void FormNewOrder_Load(object sender, EventArgs e)
@@ -72,7 +63,7 @@ namespace ProjectResort.WinForm.Forms
                 Status = Context1.Enum.Status.New,
                 DateAdd = DateTimeOffset.Now,
                 ClientKod = WorkToClient.Client.KOD.ToString(),
-                KOD = WorkToClient.Client.KOD + "/" + DateTime.UtcNow.Date
+                KOD = WorkToClient.Client.KOD + "/" + DateTime.Now.ToShortDateString()
         };
 
             using (var db = new ResortContext())
@@ -86,6 +77,15 @@ namespace ProjectResort.WinForm.Forms
                 FormOrders main = this.Owner as FormOrders;
                 main.Init();
                 this.Close();
+            }
+        }
+
+        private void PrintOrder()
+        {
+            listBox1.Items.Clear();
+            foreach (var item in Services.Keys)
+            {
+                listBox1.Items.Add($"{item.Name} x{Services[item]}");
             }
         }
     }

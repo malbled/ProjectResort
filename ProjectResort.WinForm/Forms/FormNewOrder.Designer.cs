@@ -34,7 +34,7 @@
             this.btnClient = new System.Windows.Forms.Button();
             this.labelFIO = new System.Windows.Forms.Label();
             this.btnOpenOrder = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -97,16 +97,15 @@
             this.btnOpenOrder.UseVisualStyleBackColor = false;
             this.btnOpenOrder.Click += new System.EventHandler(this.btnOpenOrder_Click);
             // 
-            // textBox1
+            // listBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(934, 200);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(380, 367);
-            this.textBox1.TabIndex = 11;
+            this.listBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 17;
+            this.listBox1.Location = new System.Drawing.Point(934, 196);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(373, 361);
+            this.listBox1.TabIndex = 11;
             // 
             // FormNewOrder
             // 
@@ -114,7 +113,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1319, 663);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnOpenOrder);
             this.Controls.Add(this.labelFIO);
             this.Controls.Add(this.btnClient);
@@ -136,6 +135,6 @@
         private System.Windows.Forms.Button btnClient;
         private System.Windows.Forms.Label labelFIO;
         private System.Windows.Forms.Button btnOpenOrder;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

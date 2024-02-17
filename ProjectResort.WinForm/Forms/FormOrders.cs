@@ -1,9 +1,9 @@
 ﻿using ProjectResort.Context1;
+using ProjectResort.Context1.Enum;
 using ProjectResort.Context1.Models;
 using System;
 using System.Data.Entity;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Windows.Forms;
 
 namespace ProjectResort.WinForm.Forms
@@ -34,7 +34,7 @@ namespace ProjectResort.WinForm.Forms
             {
                 if(e.Value != null){
                     DateTimeOffset myDate = (DateTimeOffset)e.Value;
-                    e.Value = myDate.UtcDateTime;
+                    e.Value = myDate.DateTime;
                 }
             }
             if(dataGridView1.Columns[e.ColumnIndex].Name == "Column6")
@@ -58,6 +58,24 @@ namespace ProjectResort.WinForm.Forms
                     e.Value = "Заказ не закрыт";
                 }
                 e.Value = $"{e.Value:C2}";
+            }
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Column4")
+            {
+                switch ((Status)e.Value)
+                {
+                    case Status.Closed :
+                        e.Value = "Закрыт";
+                        break;
+
+                    case Status.New:
+                        e.Value = "Открыт";
+                        break;
+
+                    case Status.InNow:
+                        e.Value = "В прокате";
+                        break;
+
+                }
             }
         }
 
