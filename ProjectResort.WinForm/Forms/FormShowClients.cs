@@ -1,4 +1,5 @@
 ﻿using ProjectResort.Context1;
+using ProjectResort.Context1.Models;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -55,5 +56,16 @@ namespace ProjectResort.WinForm.Forms
             }
         }
 
+        private void buttonEnter_Click(object sender, EventArgs e)
+        {
+            var item = (Client)dataGridView1.SelectedRows[0].DataBoundItem;
+
+            if (item != null)
+            {
+                WorkToClient.Client = item;
+            }
+            DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }

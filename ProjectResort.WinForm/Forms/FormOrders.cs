@@ -3,6 +3,7 @@ using ProjectResort.Context1.Models;
 using System;
 using System.Data.Entity;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 
 namespace ProjectResort.WinForm.Forms
@@ -13,15 +14,20 @@ namespace ProjectResort.WinForm.Forms
         public FormOrders()
         {
             InitializeComponent();
+            Init();
+            
+            btnCloseOrder.Enabled  = !WorkToUser.CompareRole(Context1.Enum.Post.Seller);
+            menuItemHistory.Enabled = WorkToUser.CompareRole(Context1.Enum.Post.Administrator);
+        }
+
+        public void Init()
+        {
             dataGridView1.AutoGenerateColumns = false;
             using (var db = new ResortContext())
             {
                 dataGridView1.DataSource = db.Orders.ToList();
             }
-            btnCloseOrder.Enabled  = !WorkToUser.CompareRole(Context1.Enum.Post.Seller);
-            menuItemHistory.Enabled = WorkToUser.CompareRole(Context1.Enum.Post.Administrator);
         }
-
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Column2" || dataGridView1.Columns[e.ColumnIndex].Name == "Column5")
@@ -51,23 +57,33 @@ namespace ProjectResort.WinForm.Forms
                 if((decimal)e.Value == default(decimal)) {
                     e.Value = "Заказ не закрыт";
                 }
+                e.Value = $"{e.Value:C2}";
             }
         }
 
         private void btnCloseOrder_Click(object sender, EventArgs e)
         {
             var item = (Order)dataGridView1.SelectedRows[0].DataBoundItem;
-
-            if (item != null)
+            if (item.Status != Context1.Enum.Status.Closed)
             {
-                using (var db = new ResortContext())
+                if (item != null)
                 {
-                    var order = db.Orders.Include(x => x.Services).FirstOrDefault(x => x.Id == item.Id);
-                    order.TotalPrice = order.Services.Sum(x => x.Price * (item.TimeRental / 60m));
-                    order.Status = Context1.Enum.Status.Closed;
-                    db.SaveChanges();
-                    dataGridView1.DataSource = db.Orders.ToList();
+                    using (var db = new ResortContext())
+                    {
+                        var order = db.Orders.Include(x => x.Services).FirstOrDefault(x => x.Id == item.Id);
+                        order.DateEnd = DateTimeOffset.Now;
+                        decimal time = (decimal)(DateTimeOffset.Now - item.DateAdd).TotalMinutes;
+                        order.TimeRental = time;
+                        order.TotalPrice = order.Services.Sum(x => x.Price * (order.TimeRental / 60m));
+                        order.Status = Context1.Enum.Status.Closed;
+                        db.SaveChanges();
+                        dataGridView1.DataSource = db.Orders.ToList();
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Заказ ЗАКРЫТ!", "ИГОРА", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -82,6 +98,12 @@ namespace ProjectResort.WinForm.Forms
             var form = new FormHistory();
             form.Show();
             this.Close();
+        }
+
+        private void btnAddOrder_Click(object sender, EventArgs e)
+        {
+            var form = new FormNewOrder();
+            form.ShowDialog(this);
         }
     }
 }
