@@ -1,9 +1,11 @@
 ﻿using ProjectResort.Context1;
 using ProjectResort.Context1.Models;
+using ProjectResort.WinForm.Forms;
 using System;
 using System.Data.Entity;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ProjectResort.WinForm.UserControl1
@@ -22,7 +24,7 @@ namespace ProjectResort.WinForm.UserControl1
         private void InitTour(Service service)
         {
             label1.Text = service.Name;
-            label2.Text = "Цена:  " + $"{service.Price:C2}" + " руб.";
+            label2.Text = "Цена:  " + $"{service.Price:C2}";
             label3.Text = "Код услуги: " + service.KOD;
 
             if (service.Image != null)
@@ -50,6 +52,20 @@ namespace ProjectResort.WinForm.UserControl1
         private void добавитьКЗаказуToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddToOrder?.Invoke(service);
+        }
+
+        private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var db = new ResortContext())
+            {
+                var service1 = db.Services.FirstOrDefault(x => x.Id == service.Id);
+                var form = new FormService(service1);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    db.SaveChanges();
+                    InitTour(service1);
+                }
+            }
         }
     }
 }

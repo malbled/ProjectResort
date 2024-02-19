@@ -39,9 +39,13 @@ namespace ProjectResort.WinForm.Forms
             }
             if(dataGridView1.Columns[e.ColumnIndex].Name == "Column6")
             {
-                decimal myDec = (decimal)e.Value;
-                int myInt = (int)myDec;
-                e.Value = myInt;
+                if (e.Value != null)
+                {
+                    decimal myDec = (decimal)e.Value;
+                    int myInt = (int)myDec;
+                    e.Value = myInt;
+                }
+                    
             }
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Column3")
             {
@@ -54,10 +58,14 @@ namespace ProjectResort.WinForm.Forms
             }
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Column7")
             {
-                if((decimal)e.Value == default(decimal)) {
-                    e.Value = "Заказ не закрыт";
+                if (e.Value != null)
+                {
+                    if ((decimal)e.Value == default(decimal))
+                    {
+                        e.Value = "Заказ не закрыт";
+                    }
+                    e.Value = $"{e.Value:C2}";
                 }
-                e.Value = $"{e.Value:C2}";
             }
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Column4")
             {
