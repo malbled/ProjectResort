@@ -34,9 +34,9 @@ namespace ProjectResort.WinForm.Forms
             }
             label2.Text = "ФИО: " + WorkToUser.Staff.FIO.ToString();
             label3.Text = "Должность: " + post;
-            if (WorkToUser.Staff.ImagePreview != null)
+            if (WorkToUser.Staff.Image != null)
             {
-                var image = Image.FromStream(new MemoryStream(WorkToUser.Staff.ImagePreview));
+                var image = Image.FromStream(new MemoryStream(WorkToUser.Staff.Image));
                 pictureBox1.Image = image;
             }
         }
@@ -53,11 +53,11 @@ namespace ProjectResort.WinForm.Forms
                 var image = File.ReadAllBytes(openFileDialog1.FileName);
                 using (var db = new ResortContext())
                 {
-                    WorkToUser.Staff.ImagePreview = image;
+                    WorkToUser.Staff.Image = image;
                     db.Entry(WorkToUser.Staff).State = EntityState.Modified;
                     db.SaveChanges();
                 }
-                pictureBox1.Image = Image.FromStream(new MemoryStream(WorkToUser.Staff.ImagePreview));
+                pictureBox1.Image = Image.FromStream(new MemoryStream(WorkToUser.Staff.Image));
             }
         }
     }

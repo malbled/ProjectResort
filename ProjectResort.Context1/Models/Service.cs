@@ -16,7 +16,7 @@ namespace ProjectResort.Context1.Models
         [Required]
         public decimal Price { get; set; }
 
-        public byte[] ImagePreview { get; set; }
+        public byte[] Image { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
 

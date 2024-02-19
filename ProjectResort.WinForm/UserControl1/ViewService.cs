@@ -25,9 +25,9 @@ namespace ProjectResort.WinForm.UserControl1
             label2.Text = "Цена:  " + $"{service.Price:C2}" + " руб.";
             label3.Text = "Код услуги: " + service.KOD;
 
-            if (service.ImagePreview != null)
+            if (service.Image != null)
             {
-                var image = Image.FromStream(new MemoryStream(service.ImagePreview));
+                var image = Image.FromStream(new MemoryStream(service.Image));
                 pictureBox1.Image = image;
             }
         }
@@ -39,11 +39,11 @@ namespace ProjectResort.WinForm.UserControl1
                 var image = File.ReadAllBytes(openFileDialog1.FileName);
                 using (var db = new ResortContext())
                 {
-                    Service.ImagePreview = image;
+                    Service.Image = image;
                     db.Entry(Service).State = EntityState.Modified;
                     db.SaveChanges();
                 }
-                pictureBox1.Image = Image.FromStream(new MemoryStream(Service.ImagePreview));
+                pictureBox1.Image = Image.FromStream(new MemoryStream(Service.Image));
             }
         }
 

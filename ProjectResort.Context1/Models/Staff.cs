@@ -20,7 +20,6 @@ namespace ProjectResort.Context1.Models
         [Required]
         public string Password { get; set; }
 
-        [Required]
-        public byte[] ImagePreview { get; set; }
+        public byte[] Image { get; set; }
     }
 }

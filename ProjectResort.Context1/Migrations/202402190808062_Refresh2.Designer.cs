@@ -7,13 +7,13 @@ namespace ProjectResort.Context1.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Edit1 : IMigrationMetadata
+    public sealed partial class Refresh2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Edit1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Refresh2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202402092013366_Edit1"; }
+            get { return "202402190808062_Refresh2"; }
         }
         
         string IMigrationMetadata.Source

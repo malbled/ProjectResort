@@ -1,8 +1,5 @@
 ﻿using ProjectResort.WinForm.Forms;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjectResort.WinForm
@@ -17,7 +14,7 @@ namespace ProjectResort.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAuthorization());
+            Application.Run(new FormHistory());
         }
     }
 }

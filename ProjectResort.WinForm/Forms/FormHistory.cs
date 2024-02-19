@@ -88,6 +88,11 @@ namespace ProjectResort.WinForm.Forms
                     dataGridView1.DataSource = db.EntryLogs.Where(p => p.StaffKod == comboBox1.SelectedItem.ToString()).OrderByDescending(x => x.DateLog).ToList();
             }
         }
+
+        private void FormHistory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 

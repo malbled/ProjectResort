@@ -16,7 +16,7 @@ namespace ProjectResort.WinForm.Forms
             InitializeComponent();
             Init();
             
-            btnCloseOrder.Enabled  = !WorkToUser.CompareRole(Context1.Enum.Post.Seller);
+            btnCloseOrder.Enabled  = !WorkToUser.CompareRole(Context1.Enum.Post.Seller) && dataGridView1.Rows.Count != 0;
             menuItemHistory.Enabled = WorkToUser.CompareRole(Context1.Enum.Post.Administrator);
         }
 
@@ -122,6 +122,11 @@ namespace ProjectResort.WinForm.Forms
         {
             var form = new FormNewOrder();
             form.ShowDialog(this);
+        }
+
+        private void FormOrders_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

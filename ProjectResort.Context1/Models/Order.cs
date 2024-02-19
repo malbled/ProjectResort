@@ -24,9 +24,9 @@ namespace ProjectResort.Context1.Models
 
         public DateTimeOffset? DateEnd { get; set; }
 
-        public decimal TimeRental { get; set; }
+        public decimal? TimeRental { get; set; }
 
-        public decimal TotalPrice { get; set; }
+        public decimal? TotalPrice { get; set; }
 
         public virtual ICollection<Service> Services { get; set; }
 
