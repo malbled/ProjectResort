@@ -14,7 +14,7 @@ namespace ProjectResort.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormHistory());
+            Application.Run(new FormAuthorization());
         }
     }
 }

@@ -11,6 +11,11 @@ namespace ProjectResort.WinForm.Forms
         public FormShowClients()
         {
             InitializeComponent();
+            Init();
+            buttonEnter.Enabled = button1.Enabled = dataGridView1.Rows.Count != 0;
+        }
+        public void Init()
+        {
             dataGridView1.AutoGenerateColumns = false;
             using (var db = new ResortContext())
             {
@@ -21,25 +26,17 @@ namespace ProjectResort.WinForm.Forms
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.ClearSelection();
-            
-            for(int i = 0; i < dataGridView1.RowCount; i++)
+            using (var db = new ResortContext())
             {
-                for(int j = 0;  j < dataGridView1.ColumnCount; j++)
+                if (!(string.IsNullOrEmpty(textBox1.Text)))
                 {
-                    if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox1.Text))
-                    {
-                        dataGridView1.Rows[i].Selected = true;
-                        break;
-                    }
+                    dataGridView1.DataSource = db.Clients.Where(p => p.FIO.ToLower().Contains(textBox1.Text.ToLower())).ToList();
+                }
+                else
+                {
+                   Init();
                 }
             }
-
-            if(textBox1.Text == string.Empty)
-            {
-                dataGridView1.ClearSelection();
-            }
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -50,9 +47,10 @@ namespace ProjectResort.WinForm.Forms
             {
                 using (var db = new ResortContext())
                 {
-                    //db.Clients.Add(form.Tour);
+                    db.Clients.Add(form.Client);
                     db.SaveChanges();
                 }
+                Init();
             }
         }
 
@@ -66,6 +64,34 @@ namespace ProjectResort.WinForm.Forms
             }
             DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Column4")
+            {
+                if (e.Value != null)
+                {
+                    DateTimeOffset myDate = (DateTimeOffset)e.Value;
+                    e.Value = myDate.DateTime.ToShortDateString();
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var item = (Client)dataGridView1.SelectedRows[0].DataBoundItem;
+            if (item == null) return;
+            using (var db = new ResortContext())
+            {
+                var item1 = db.Clients.FirstOrDefault(x => x.Id == item.Id);
+                var form = new FormAddClient(item1);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    db.SaveChanges();
+                    Init();
+                }
+            }
         }
     }
 }
