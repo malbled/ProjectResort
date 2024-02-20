@@ -12,7 +12,7 @@ namespace ProjectResort.WinForm.Forms
         {
             InitializeComponent();
             Init();
-            buttonEnter.Enabled = button1.Enabled = dataGridView1.Rows.Count != 0;
+            
         }
         public void Init()
         {
@@ -21,6 +21,7 @@ namespace ProjectResort.WinForm.Forms
             {
                 dataGridView1.DataSource = db.Clients.ToList();
             }
+            buttonEnter.Enabled = button1.Enabled = dataGridView1.Rows.Count != 0;
         }
 
 
