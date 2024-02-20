@@ -4,6 +4,7 @@ using System;
 using System.Data.Entity;
 using System.Drawing;
 using System.IO;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace ProjectResort.WinForm.Forms
@@ -48,8 +49,9 @@ namespace ProjectResort.WinForm.Forms
 
         private void btnPhoto_Click(object sender, EventArgs e)
         {
+            openFileDialog1.Filter = "Файлы изображений (*.jpg)|*.jpg";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
+            { 
                 var image = File.ReadAllBytes(openFileDialog1.FileName);
                 using (var db = new ResortContext())
                 {

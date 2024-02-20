@@ -36,6 +36,7 @@ namespace ProjectResort.WinForm.UserControl1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            openFileDialog1.Filter = "Файлы изображений (*.jpg)|*.jpg";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 var image = File.ReadAllBytes(openFileDialog1.FileName);
